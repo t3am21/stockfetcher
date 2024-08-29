@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock Price Checker</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Stock Price Checker</h1>
+<form action="/getStockPrice" method="get">
+    <label for="symbol">Enter Stock Symbol:</label>
+    <input type="text" id="symbol" name="symbol" required>
+    <button type="submit">Check Price</button>
+</form>
+
+<!-- Display stock information -->
+<div th:if="${title}">
+    <h2>Title: <span th:text="${title}"></span></h2>
+    <h3>Stock Price: <span th:text="${stockPrice}"></span></h3>
+</div>
+</body>
+</html>
